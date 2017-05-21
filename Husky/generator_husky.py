@@ -1,13 +1,13 @@
 def gen(x):
-    for i in xrange(x):
+    for i in range(x):
         yield i
 
 
 g = gen(10)
 
 if __name__ == '__main__':
-    print g.next()
-    print g.next()
+    print(next(g))
+    print(next(g))
 
     # print vars(g)
     # bytes = wrap.dumps(g)
@@ -16,4 +16,4 @@ if __name__ == '__main__':
     # print g2.next()
 
     # print help(types.GeneratorType)
-    print type(g)
+    print(type(g))

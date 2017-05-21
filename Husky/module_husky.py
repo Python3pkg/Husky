@@ -33,4 +33,4 @@ def is_userdefined(m):
 
 if __name__ == '__main__':
     for l in NON_USERDEFINED_PATHES:
-        print l
+        print(l)

@@ -1,34 +1,34 @@
-import cPickle as pickle
+import pickle as pickle
 import struct
 import types
 
-import dict_husky
-import function_husky
-import instance_husky
-import iterable_husky
-import module_husky
-import type_husky
+from . import dict_husky
+from . import function_husky
+from . import instance_husky
+from . import iterable_husky
+from . import module_husky
+from . import type_husky
 
 dispatches = [
-    (types.NoneType, pickle),
-    (types.BooleanType, pickle),
-    (types.IntType, pickle),
-    (types.LongType, pickle),
-    (types.FloatType, pickle),
-    (types.StringType, pickle),
-    (types.ComplexType, pickle),
-    (types.UnicodeType, pickle),
+    (type(None), pickle),
+    (bool, pickle),
+    (int, pickle),
+    (int, pickle),
+    (float, pickle),
+    (bytes, pickle),
+    (complex, pickle),
+    (str, pickle),
     (types.BuiltinFunctionType, pickle),
-    (types.XRangeType, pickle),
-    (types.TupleType, iterable_husky),
-    (types.ListType, iterable_husky),
+    (range, pickle),
+    (tuple, iterable_husky),
+    (list, iterable_husky),
     (types.GeneratorType, instance_husky),
-    (types.DictType, dict_husky),
-    (types.DictionaryType, dict_husky),
+    (dict, dict_husky),
+    (dict, dict_husky),
     (types.FunctionType, function_husky),
     (types.LambdaType, function_husky),
     (types.ModuleType, module_husky),
-    (types.TypeType, type_husky),
+    (type, type_husky),
     (object, pickle)
     # (object,                    instance_husky)
 ]
@@ -68,6 +68,6 @@ def loads(s, use_globals=False):
 if __name__ == '__main__':
     v = {1: [1, 2, 3], "v": None}
     b = dumps(v)
-    print repr(b)
+    print(repr(b))
     v1 = loads(b)
-    print v1
+    print(v1)

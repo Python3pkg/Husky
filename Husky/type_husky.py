@@ -1,27 +1,27 @@
 import types
 
-import class_husky
-import wrap
+from . import class_husky
+from . import wrap
 
 type_list = [
-    types.NoneType,
-    types.TypeType,
-    types.BooleanType,
-    types.IntType,
-    types.LongType,
-    types.FloatType,
-    types.ComplexType,
-    types.StringType,
-    types.UnicodeType,
-    types.TupleType,
-    types.ListType,
-    types.DictType,
-    types.DictionaryType,
+    type(None),
+    type,
+    bool,
+    int,
+    int,
+    float,
+    complex,
+    bytes,
+    str,
+    tuple,
+    list,
+    dict,
+    dict,
     types.FunctionType,
     types.LambdaType,
     types.GeneratorType,
     types.CodeType,
-    types.ClassType,
+    type,
     types.InstanceType,
     types.MethodType,
     types.UnboundMethodType,
@@ -29,17 +29,17 @@ type_list = [
     types.BuiltinMethodType,
     types.ModuleType,
     types.FileType,
-    types.XRangeType,
-    types.SliceType,
-    types.EllipsisType,
+    range,
+    slice,
+    type(Ellipsis),
     types.TracebackType,
     types.FrameType,
-    types.BufferType,
+    memoryview,
     types.DictProxyType,
-    types.NotImplementedType,
+    type(NotImplemented),
     types.GetSetDescriptorType,
     types.MemberDescriptorType,
-    types.StringTypes,
+    str,
 ]
 
 

@@ -1,4 +1,4 @@
-import wrap
+from . import wrap
 
 
 def dumps(ins):
@@ -28,4 +28,4 @@ if __name__ == '__main__':
     c = UserClass(1)
     bytes = dumps(c)
     c2 = loads(bytes)
-    print bytes
+    print(bytes)

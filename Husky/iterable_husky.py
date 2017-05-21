@@ -1,6 +1,6 @@
-import cPickle as pickle
+import pickle as pickle
 
-import wrap
+from . import wrap
 
 
 def dumps(variable, gen_globals=True):

@@ -1,3 +1,3 @@
-from wrap import dumps, loads
+from .wrap import dumps, loads
 
 __all__ = ["dumps", "loads"]
